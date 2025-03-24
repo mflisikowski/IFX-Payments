@@ -42,6 +42,19 @@ export const fetchUsers = async (): Promise<User[]> => {
   }
 };
 
+export const fetchUserById = async (id: number): Promise<User> => {
+  try {
+    const response = await fetch(`${API_URL}/users/${id}`);
+    if (!response.ok) {
+      throw new Error(`Failed to fetch user with ID ${id}`);
+    }
+    return response.json();
+  } catch (error) {
+    console.error(`Error fetching user with ID ${id}:`, error);
+    throw error;
+  }
+};
+
 export const createPost = async (newPost: NewPost): Promise<Post> => {
   try {
     const response = await fetch(POSTS_URL, {
