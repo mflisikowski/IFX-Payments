@@ -33,7 +33,7 @@ export default function SearchBar({
   };
 
   return (
-    <div className="w-full mb-6">
+    <div className="w-full">
       <form onSubmit={handleSubmit} className="relative">
         <div className="relative">
           <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-gray-500 dark:text-gray-400" />
@@ -42,7 +42,7 @@ export default function SearchBar({
               setInputValue(e.target.value)
             }
             placeholder={placeholder}
-            className="pl-10 pr-10"
+            className="pl-10 pr-10 bg-white dark:bg-gray-800 min-h-12"
             value={inputValue}
             type="text"
           />

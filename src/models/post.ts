@@ -5,8 +5,4 @@ export interface Post {
   body: string;
 }
 
-export interface NewPost {
-  userId: number;
-  title: string;
-  body: string;
-}
+export interface NewPost extends Omit<Post, "id"> {}
