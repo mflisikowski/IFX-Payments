@@ -1,36 +1,112 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Next.js Blog & Posts Platform
 
-## Getting Started
+A modern web application built with Next.js 15, React 19, and Tailwind CSS for managing and displaying blog posts.
 
-First, run the development server:
+## 📋 Features
+
+- **Modern React & Next.js** - Uses the latest versions of React 19 and Next.js 15
+- **App Router** - Built using Next.js App Router for enhanced routing capabilities
+- **Post Management** - Create, view, and list blog posts
+- **Dark Mode Support** - Seamless dark mode integration with next-themes
+- **Responsive Design** - Mobile-first approach for all screen sizes
+- **TypeScript** - Full TypeScript support for better development experience
+- **UI Components** - Styled components using shadcn/ui and Tailwind CSS
+
+## 🚀 Getting Started
+
+First, clone the repository:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone https://github.com/mflisikowski/IFX-Payments
+cd IFX-Payments
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Install dependencies:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+pnpm install
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Run the development server:
 
-## Learn More
+```bash
+pnpm dev
+```
 
-To learn more about Next.js, take a look at the following resources:
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the application.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 🏗️ Project Structure
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```
+/
+├── public/              # Static assets
+├── src/
+│   ├── app/             # App Router pages
+│   │   ├── posts/       # Posts related pages
+│   │   │   ├── [id]/    # Single post page
+│   │   │   └── new/     # New post creation page
+│   │   ├── globals.css  # Global styles
+│   │   ├── layout.tsx   # Root layout
+│   │   └── page.tsx     # Home page
+│   ├── components/      # Reusable components
+│   │   ├── fields/      # Form field components
+│   │   ├── ui/          # UI components
+│   │   └── ...
+│   ├── constants/       # Global constants
+│   ├── contexts/        # React contexts
+│   ├── models/          # TypeScript interfaces
+│   ├── providers/       # Context providers
+│   ├── services/        # API services
+│   └── utils/           # Utility functions
+├── components.json      # shadcn/ui configuration
+├── next.config.ts       # Next.js configuration
+├── package.json         # Project dependencies
+├── postcss.config.mjs   # PostCSS configuration
+└── tsconfig.json        # TypeScript configuration
+```
 
-## Deploy on Vercel
+## 💻 Key Components
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Posts
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- **Post List** - Displays all posts with search functionality
+- **Post Detail** - Shows individual post with author information
+- **Post Form** - Form for creating new posts
+
+### UI Components
+
+The project uses shadcn UI components based on Radix UI primitives:
+
+- Buttons
+- Cards
+- Dropdown menus
+- Input fields
+- Textarea fields
+
+### Theming
+
+The application supports both light and dark modes using:
+
+- ThemeProvider from next-themes
+- Theme toggle component
+- CSS variables for theme colors
+
+## 🧰 Technologies
+
+- **Framework**: Next.js 15
+- **UI Library**: React 19
+- **Language**: TypeScript 5
+- **Styling**: Tailwind CSS 4
+- **Icons**: Lucide React
+- **UI Components**: Radix UI
+- **Theme Switching**: next-themes
+- **Utility Libraries**: clsx, class-variance-authority, tailwind-merge
+
+## 🔄 API Integration
+
+The application communicates with an external API (likely JSONPlaceholder or similar) to:
+
+- Fetch all posts
+- Fetch individual posts
+- Fetch user data
+- Create new posts
