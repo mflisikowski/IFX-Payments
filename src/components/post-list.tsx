@@ -4,6 +4,7 @@ import type { Post } from "@/models/post";
 import type { User } from "@/models/user";
 
 import { PostCard } from "@/components/post-card";
+import SearchBar from "@/components/search-bar";
 import React, { useState } from "react";
 import Link from "next/link";
 
@@ -13,10 +14,10 @@ interface PostListProps {
 }
 
 export const PostList = ({ posts, users }: PostListProps) => {
-  const [search, setSearch] = useState("");
+  const [searchTerm, setSearchTerm] = useState("");
 
   const txtFilter = (text: string) =>
-    text.toLowerCase().includes(search.toLowerCase());
+    text.toLowerCase().includes(searchTerm.toLowerCase());
 
   const filteredPosts = posts.filter(
     (post) => txtFilter(post.title) || txtFilter(post.body)
@@ -28,10 +29,16 @@ export const PostList = ({ posts, users }: PostListProps) => {
 
   return (
     <div>
+      <SearchBar
+        searchTerm={searchTerm}
+        setSearchTerm={setSearchTerm}
+        placeholder="Search posts..."
+      />
+
       {filteredPosts.length === 0 ? (
         <div className="text-center py-10">
           <p className="text-gray-600 dark:text-gray-300">
-            {search ? "No posts match your search." : "No posts available."}
+            {searchTerm ? "No posts match your search." : "No posts available."}
           </p>
         </div>
       ) : (
