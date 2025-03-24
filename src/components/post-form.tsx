@@ -60,21 +60,16 @@ export default function PostForm() {
         <PostBody value={formData.body} onChange={handleChange} />
       </div>
 
-      <div className="flex flex-col sm:flex-row gap-2 justify-center sm:justify-end">
+      <div className="flex flex-col sm:flex-row gap-2 justify-center sm:justify-end [&>button]:w-full [&>button]:sm:w-auto">
         <Button
           type="button"
           variant="outline"
           onClick={() => router.back()}
           disabled={isSubmitting}
-          className="w-full sm:w-auto"
         >
           Cancel
         </Button>
-        <Button
-          type="submit"
-          disabled={isSubmitting}
-          className="w-full sm:w-auto"
-        >
+        <Button type="submit" disabled={isSubmitting}>
           {isSubmitting ? "Submitting..." : "Create Post"}
         </Button>
       </div>

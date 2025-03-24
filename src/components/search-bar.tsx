@@ -36,24 +36,24 @@ export default function SearchBar({
     <div className="w-full">
       <form onSubmit={handleSubmit} className="relative">
         <div className="relative">
-          <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-gray-500 dark:text-gray-400" />
+          <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground" />
           <Input
             onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
               setInputValue(e.target.value)
             }
             placeholder={placeholder}
-            className="pl-10 pr-10 bg-white dark:bg-gray-800 min-h-12"
+            className="pl-10 pr-10 min-h-12"
             value={inputValue}
             type="text"
           />
 
           {inputValue && (
             <Button
-              className="absolute right-0 top-0 h-full aspect-square text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-300"
               variant="ghost"
               type="button"
               size="icon"
               onClick={handleClear}
+              className="absolute right-0 top-0 h-full"
             >
               <X className="h-4 w-4" />
             </Button>

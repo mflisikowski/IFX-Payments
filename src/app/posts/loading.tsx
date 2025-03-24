@@ -10,13 +10,28 @@ const SKELETON_ITEMS = [
 
 export default function Loading() {
   return (
-    <main className="min-h-screen bg-gray-100 dark:bg-gray-900">
+    <main className="min-h-screen">
       <div className="container mx-auto py-8 px-4">
         <h1 className="text-3xl font-bold text-gray-900 dark:text-white mb-6">
           All Posts
         </h1>
 
         <div>
+          <div className="flex items-center justify-between gap-4 w-full mb-6">
+            <div className="relative flex-1">
+              <div className="h-12 bg-gray-200 dark:bg-gray-700 rounded-md w-full animate-pulse" />
+            </div>
+
+            <div className="inline-flex items-center justify-center min-w-12 min-h-12 rounded-full bg-gray-300 dark:bg-gray-600 animate-pulse px-6 py-2">
+              <div className="h-5 w-5 rounded-full" />
+              <div className="hidden sm:block h-4 w-16 bg-gray-300 dark:bg-gray-600 ml-2 rounded" />
+            </div>
+
+            <div className="w-12 h-12 bg-gray-300 dark:bg-gray-600 rounded-full animate-pulse flex items-center justify-center">
+              <div className="h-5 w-5 rounded-full" />
+            </div>
+          </div>
+
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {SKELETON_ITEMS.map((item) => (
               <PostCardSkeleton key={item.id} />

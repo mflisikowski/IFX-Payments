@@ -3,6 +3,7 @@
 import type { Post } from "@/models/post";
 import type { User } from "@/models/user";
 
+import { ThemeToggle } from "@/components/theme-toggle";
 import { PostCard } from "@/components/post-card";
 import SearchBar from "@/components/search-bar";
 import React, { useState } from "react";
@@ -38,12 +39,14 @@ export const PostList = ({ posts, users }: PostListProps) => {
         />
 
         <Link
-          className="inline-flex items-center justify-center min-w-10 min-h-10 rounded-full text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 whitespace-nowrap gap-2 px-4 py-2"
+          className="inline-flex items-center justify-center min-w-12 min-h-12 rounded-full text-primary-foreground bg-primary hover:bg-primary/90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary whitespace-nowrap gap-2 px-8 py-2"
           href="/posts/new"
         >
           <Plus className="h-5 w-5 flex-shrink-0" />
           <span className="hidden sm:block text-sm font-medium">Add Post</span>
         </Link>
+
+        <ThemeToggle />
       </div>
 
       {filteredPosts.length === 0 ? (

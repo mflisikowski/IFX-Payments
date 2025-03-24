@@ -16,15 +16,11 @@ export default function ErrorPage({ error, reset }: ErrorComponentProps) {
   }, [error]);
 
   return (
-    <main className="min-h-screen bg-gray-100 dark:bg-gray-900">
+    <main className="min-h-screen bg-background">
       <div className="container mx-auto py-8 px-4">
         <div className="mb-4">
           <Link href="/posts">
-            <Button
-              variant="ghost"
-              size="sm"
-              className="flex items-center gap-1"
-            >
+            <Button variant="ghost" size="sm">
               <ArrowLeft className="h-4 w-4" />
               Back to posts
             </Button>
@@ -32,7 +28,7 @@ export default function ErrorPage({ error, reset }: ErrorComponentProps) {
         </div>
 
         <div>
-          <AlertTriangle className="h-12 w-12 text-amber-500 mx-auto mb-2" />
+          <AlertTriangle className="h-12 w-12 text-destructive mx-auto mb-2" />
           <h1 className="text-2xl font-bold tracking-tight">
             Something went wrong
           </h1>

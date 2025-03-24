@@ -57,15 +57,11 @@ export default async function PostPage({ params }: PostPageProps) {
   }
 
   return (
-    <main className="min-h-screen bg-gray-100 dark:bg-gray-900">
+    <main className="min-h-screen bg-background">
       <div className="container mx-auto py-8 px-4">
         <div className="mb-4">
           <Link href="/posts">
-            <Button
-              variant="ghost"
-              size="sm"
-              className="flex items-center gap-1"
-            >
+            <Button variant="ghost" size="sm">
               <ArrowLeft className="h-4 w-4" />
               Back to posts
             </Button>

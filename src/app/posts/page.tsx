@@ -6,7 +6,7 @@ export default async function Posts() {
   const [posts, users] = await Promise.all([fetchPosts(), fetchUsers()]);
 
   return (
-    <main className="min-h-screen bg-gray-100 dark:bg-gray-900">
+    <main className="min-h-screen">
       <div className="container mx-auto py-8 px-4">
         <h1 className="text-3xl font-bold text-gray-900 dark:text-white mb-6">
           All Posts
